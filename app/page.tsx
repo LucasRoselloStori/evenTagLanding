@@ -18,6 +18,7 @@ import {
   TrendingUp,
 } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function EventTagLanding() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -33,13 +34,12 @@ export default function EventTagLanding() {
             {Array.from({ length: 16 }).map((_, i) => (
               <div
                 key={i}
-                className={`h-8 rounded ${
-                  [2, 3, 6, 7, 10, 11].includes(i)
-                    ? "bg-red-400"
-                    : [1, 4, 5, 8, 9, 12].includes(i)
-                      ? "bg-orange-300"
-                      : "bg-green-200"
-                }`}
+                className={`h-8 rounded ${[2, 3, 6, 7, 10, 11].includes(i)
+                  ? "bg-red-400"
+                  : [1, 4, 5, 8, 9, 12].includes(i)
+                    ? "bg-orange-300"
+                    : "bg-green-200"
+                  }`}
               />
             ))}
           </div>
@@ -137,11 +137,8 @@ export default function EventTagLanding() {
       {/* Header */}
       <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-              <BarChart3 className="w-5 h-5 text-green-700" />
-            </div>
-            <span className="text-xl font-bold text-foreground">EventTag</span>
+          <div className="w-[180px] h-[80px] flex items-center justify-center">
+            <Image src="/eventtag-logo.png" alt="EventTag Logo" width={180} height={80} className="object-contain" />
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -168,13 +165,18 @@ export default function EventTagLanding() {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-150"
             poster="/modern-event-space-with-people-networking.png"
+            onError={(e) => console.log("[v0] Video error:", e)}
+            onLoadStart={() => console.log("[v0] Video loading started")}
+            onCanPlay={() => console.log("[v0] Video can play")}
           >
-            <source src="/your-video.mp4" type="video/mp4" />
+            <source src="/landing-2.mp4" type="video/mp4" />
             {/* Fallback for browsers that don't support video */}
             <div className="w-full h-full bg-gradient-to-b from-muted/50 to-background"></div>
           </video>
+          {/* Blur overlay */}
+          <div className="absolute inset-0 backdrop-blur-sm"></div>
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
@@ -187,11 +189,10 @@ export default function EventTagLanding() {
             Advanced RFID Technology
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance drop-shadow-lg">
-            Design better event layouts with real data
+            Improve your event perfomance with real time data
           </h1>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-pretty drop-shadow-md">
-            RFID badges that reveal how attendees move through your space, helping you create optimal layouts that
-            maximize engagement.
+            RFID badges that reveal how attendees move through your space, helping you monitor your event performace.
           </p>
           <p className="text-lg text-white/80 mb-10 max-w-3xl mx-auto drop-shadow-md">
             Stop guessing where to place booths and activities. Use real movement data to design layouts that naturally
@@ -345,9 +346,8 @@ export default function EventTagLanding() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? "bg-green-500 scale-125" : "bg-muted hover:bg-muted-foreground/30"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-green-500 scale-125" : "bg-muted hover:bg-muted-foreground/30"
+                    }`}
                 />
               ))}
             </div>
@@ -405,10 +405,15 @@ export default function EventTagLanding() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-green-700" />
+              <div className="w-[180px] h-[80px] flex items-center justify-center">
+                <Image
+                  src="/eventtag-logo.png"
+                  alt="EventTag Logo"
+                  width={180}
+                  height={80}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold text-foreground">EventTag</span>
             </div>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Analytics solutions for corporate events, trade shows, conferences and festivals.
