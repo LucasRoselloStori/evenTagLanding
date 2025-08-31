@@ -1,5 +1,7 @@
 # EventTag Landing Page
 
+> 🚀 **Built with [v0](https://v0.dev)** - AI-powered development platform
+
 A modern, responsive landing page for EventTag - an advanced RFID-based event analytics platform that helps event organizers optimize their layouts and improve attendee engagement through real-time data insights.
 
 ## 🚀 Features
@@ -20,6 +22,7 @@ A modern, responsive landing page for EventTag - an advanced RFID-based event an
 
 ## 🛠️ Tech Stack
 
+- **Development Platform**: [v0](https://v0.dev) - AI-powered development
 - **Framework**: Next.js 15.2.4
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4.1.9
@@ -86,7 +89,6 @@ The application includes a complete dark mode implementation:
 ## 🎥 Video Background
 
 The hero section features a dynamic video background with:
-- **Source**: `landing-2.mp4` (event space footage)
 - **Effects**: 150% zoom with 60% opacity
 - **Fallback**: Static image for browsers that don't support video
 - **Performance**: Optimized loading with proper poster images
@@ -188,4 +190,4 @@ This project is proprietary software. All rights reserved.
 
 ---
 
-Built with ❤️ using Next.js and Tailwind CSS
+Built with ❤️ using [v0](https://v0.dev), Next.js and Tailwind CSS
