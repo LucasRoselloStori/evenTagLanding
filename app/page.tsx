@@ -43,10 +43,10 @@ export default function EventTagLanding() {
               <div
                 key={i}
                 className={`h-8 rounded ${[2, 3, 6, 7, 10, 11].includes(i)
-                    ? "bg-red-500"
-                    : [1, 4, 5, 8, 9, 12].includes(i)
-                      ? "bg-orange-400"
-                      : "bg-green-300"
+                  ? "bg-red-500"
+                  : [1, 4, 5, 8, 9, 12].includes(i)
+                    ? "bg-orange-400"
+                    : "bg-green-300"
                   }`}
               />
             ))}
@@ -191,13 +191,13 @@ export default function EventTagLanding() {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-150 opacity-60"
             poster="/modern-event-space-with-people-networking.png"
             onError={(e) => console.log("[v0] Video error:", e)}
             onLoadStart={() => console.log("[v0] Video loading started")}
             onCanPlay={() => console.log("[v0] Video can play")}
           >
-            <source src="/landing-video.mp4" type="video/mp4" />
+            <source src="/landing-2.mp4" type="video/mp4" />
             {/* Fallback for browsers that don't support video */}
             <div className="w-full h-full bg-gradient-to-b from-gray-800/50 to-gray-900"></div>
           </video>
